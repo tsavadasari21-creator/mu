@@ -1,433 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>K Rakesh | Mechanical Engineer & Developer Portfolio</title>
-  <!-- Google Fonts + Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #edf2f9;
-      color: #1a2c3e;
-      line-height: 1.5;
-      padding: 2rem 1.5rem;
-    }
-
-    .portfolio-container {
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    /* fresh unique color palette: deep navy, coral, mint, soft lavender */
-    :root {
-      --primary-deep: #1E3A5F;
-      --coral-bright: #FF6B4A;
-      --mint-accent: #48CFAD;
-      --lavender-soft: #D6E0F0;
-      --bg-light: #F4F8FE;
-      --card-white: #ffffff;
-      --shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.01);
-    }
-
-    /* block-style cards with unique borders and hover */
-    .card {
-      background: var(--card-white);
-      border-radius: 2rem;
-      padding: 1.8rem;
-      margin-bottom: 2rem;
-      transition: all 0.25s ease;
-      box-shadow: var(--shadow);
-      border: 1px solid #eef2fa;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 28px 36px -16px rgba(0, 0, 0, 0.12);
-      border-color: var(--coral-bright);
-    }
-
-    .section-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      border-left: 6px solid var(--coral-bright);
-      padding-left: 1rem;
-      color: var(--primary-deep);
-    }
-
-    .section-title i {
-      color: var(--coral-bright);
-      font-size: 1.7rem;
-    }
-
-    /* hero area */
-    .hero {
-      background: linear-gradient(135deg, #1E3A5F 0%, #2C5A7A 100%);
-      border-radius: 2rem;
-      padding: 2.2rem 2rem;
-      margin-bottom: 2rem;
-      color: white;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-tag {
-      background: rgba(255,255,255,0.18);
-      backdrop-filter: blur(4px);
-      padding: 0.4rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 500;
-      display: inline-block;
-      margin-top: 0.7rem;
-    }
-
-    .contact-info {
-      background: rgba(255,255,255,0.12);
-      border-radius: 1.5rem;
-      padding: 0.8rem 1.5rem;
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-    }
-
-    .contact-info span {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-    }
-
-    .contact-info i {
-      color: var(--mint-accent);
-      font-size: 1.1rem;
-    }
-
-    /* grid utilities */
-    .grid-2col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .grid-3col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* education table style */
-    .edu-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .edu-table th, .edu-table td {
-      padding: 12px 8px;
-      border-bottom: 1px solid #e2edf2;
-      text-align: left;
-    }
-    .edu-table th {
-      background: var(--lavender-soft);
-      font-weight: 600;
-      color: var(--primary-deep);
-    }
-
-    .skill-badge {
-      display: inline-block;
-      background: #eef2fc;
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin: 0.25rem 0.4rem 0.25rem 0;
-      border-left: 3px solid var(--coral-bright);
-      transition: all 0.1s;
-    }
-
-    .project-card {
-      background: #ffffff;
-      border-top: 5px solid var(--mint-accent);
-      border-radius: 1.5rem;
-    }
-
-    .project-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--primary-deep);
-      margin-bottom: 0.75rem;
-    }
-
-    .train-badge {
-      background: var(--coral-bright);
-      color: white;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    .personal-detail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .detail-item {
-      background: #f9fbfe;
-      padding: 0.7rem 1rem;
-      border-radius: 1rem;
-      border-left: 4px solid var(--mint-accent);
-    }
-
-    .declaration {
-      background: #fef7e0;
-      border-radius: 1.5rem;
-      padding: 1.2rem;
-      font-style: italic;
-      border: 1px solid #ffe0b5;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      padding: 1.5rem;
-      background: var(--primary-deep);
-      color: white;
-      border-radius: 2rem;
-    }
-
-    .btn-download {
-      background: var(--coral-bright);
-      border: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      color: white;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1rem;
-    }
-
-    .btn-download:hover {
-      background: #e55a3a;
-      transform: scale(1.02);
-    }
-
-    @media (max-width: 700px) {
-      body {
-        padding: 1rem;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .section-title {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio of K Sai Kiran Reddy">
+    <title>Portfolio - K Sai Kiran Reddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        .contact-info {
+            font-size: 1.1em;
+        }
+        .skills, .languages, .certifications {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-<div class="portfolio-container">
-  <!-- Hero Section with unique colors -->
-  <div class="hero">
-    <div>
-      <h1>K RAKESH</h1>
-      <div class="hero-tag"><i class="fas fa-cogs"></i> Mechanical Engineer | Java & C++ Developer | Railway Systems Enthusiast</div>
-      <div class="contact-info">
-        <span><i class="fas fa-mobile-alt"></i> +91 9705805546</span>
-        <span><i class="fas fa-envelope"></i> charyrakesh052@gmail.com</span>
-        <span><i class="fas fa-map-marker-alt"></i> Vijayapuri Colony, Uppal, Hyderabad</span>
-      </div>
-    </div>
-    <div style="background: rgba(72, 205, 173, 0.2); border-radius: 2rem; padding: 1rem 1.5rem; text-align: center;">
-      <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: #48CFAD;"></i>
-      <p style="margin-top: 0.3rem;">Goal-oriented · Quick learner</p>
-    </div>
-  </div>
+    <header>
+        <h1>K Sai Kiran Reddy</h1>
+        <p class="contact-info">
+            Address: United Kingdom, London | Ph.no: 9840364956 | Email: <a href="mailto:Saikiran031997@outlook.com" style="color: white;">Saikiran031997@outlook.com</a>
+        </p>
+    </header>
 
-  <!-- PROFILE SUMMARY (unique styling) -->
-  <div class="card">
-    <div class="section-title"><i class="fas fa-user-astronaut"></i> Profile Summary</div>
-    <p style="font-size: 1.05rem; font-weight: 500; color: #2c4b6e;">Goal-oriented mechanical engineer with strong interpersonal skills, eager to contribute to customer-focused organizations. Combines technical knowledge in mechanical systems with programming abilities in C, C++, and Java. Quick learner, dedicated, and adaptable to new challenges.</p>
-  </div>
+    <section>
+        <h2>CAREER OBJECTIVE</h2>
+        <p>To be part of a challenging and competitive environment where I could demonstrate my technical and non-technical abilities and skills, improve my knowledge, capabilities, and put them to use for the development of the organization.</p>
+    </section>
 
-  <!-- EDUCATION + TECHNICAL SKILLS double column -->
-  <div class="grid-2col">
-    <!-- Education block -->
-    <div class="card">
-      <div class="section-title" style="border-left-color: #48CFAD;"><i class="fas fa-graduation-cap"></i> Education</div>
-      <table class="edu-table">
-        <thead><tr><th>Degree</th><th>Specialization</th><th>Board/University</th><th>Year</th><th>%</th></tr></thead>
-        <tbody>
-          <tr><td>BTech</td><td>Mechanical</td><td>JNTUH</td><td>2022</td><td>62</td></tr>
-          <tr><td>Intermediate</td><td>MPC</td><td>Board of Intermediate Education</td><td>2018</td><td>65.6</td></tr>
-          <tr><td>SSC</td><td>General</td><td>State Board of Secondary Education</td><td>2016</td><td>87</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <section>
+        <h2>ACADEMIC BACKGROUND</h2>
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Course</th>
+                <th>University/Board</th>
+                <th>Name of Institution</th>
+                <th>Year of Passing</th>
+                <th>Aggregate (%)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>MSC in Mechanical Engineering</td>
+                <td>Kingston University</td>
+                <td>Kingston University</td>
+                <td>2021</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bachelor of Engineering (Mechanical)</td>
+                <td>SRM University</td>
+                <td>SRM Institute of Technology</td>
+                <td>2019</td>
+                <td>76</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Intermediate</td>
+                <td>Board of Intermediate Education</td>
+                <td>Narayana Junior College, Kphb</td>
+                <td>2015</td>
+                <td>68.4</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>SSC</td>
+                <td>CBSE</td>
+                <td>DAV Public School</td>
+                <td>2013</td>
+                <td>6.8</td>
+            </tr>
+        </table>
+    </section>
 
-    <!-- Technical Skills block (colorful badges) -->
-    <div class="card">
-      <div class="section-title" style="border-left-color: #FF6B4A;"><i class="fas fa-code"></i> Technical Skills</div>
-      <div style="margin-bottom: 1rem;">
-        <h4 style="color: #1E3A5F;"><i class="fas fa-laptop-code"></i> Programming Languages</h4>
-        <div><span class="skill-badge">C</span><span class="skill-badge">C++</span><span class="skill-badge">Java</span><span class="skill-badge">HTML (Web Basics)</span></div>
-      </div>
-      <div>
-        <h4 style="color: #1E3A5F;"><i class="fas fa-train"></i> Mechanical Systems</h4>
-        <div><span class="skill-badge">Air Brake System (Railways)</span><span class="skill-badge">Basic Testing & Diagnostics</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROJECTS section (3 cards with unique style) -->
-  <div class="card" style="background: #ffffff;">
-    <div class="section-title"><i class="fas fa-microchip"></i> Key Projects</div>
-    <div class="grid-3col">
-      <!-- Project 1 -->
-      <div class="project-card" style="padding: 1.2rem; background: #fefaf5;">
-        <span class="train-badge"><i class="fas fa-car-crash"></i> Collision Avoidance</span>
-        <div class="project-title">Automatic Pneumatic Bumper System</div>
-        <p>Designed collision avoidance using pneumatic cylinders & IR sensors. Reduced impact force in low-speed collisions. Fabricated prototype & tested response under load conditions.</p>
-      </div>
-      <!-- Project 2 -->
-      <div class="project-card" style="padding: 1.2rem; background: #f4fafd;">
-        <span class="train-badge" style="background: #48CFAD;"><i class="fas fa-train"></i> Railways</span>
-        <div class="project-title">Performance Analysis of Air Brake System (Indian Railways)</div>
-        <p>Studied twin-pipe air brake systems in passenger coaches. Analyzed brake cylinder pressure variations, leakage detection. Prepared technical report on maintenance & failure modes.</p>
-      </div>
-      <!-- Project 3 -->
-      <div class="project-card" style="padding: 1.2rem; background: #fff4ef;">
-        <span class="train-badge" style="background: #FF6B4A;"><i class="fab fa-java"></i> Java Mini Project</span>
-        <div class="project-title">Library Management System using Java</div>
-        <p>Console-based app for book issuance, returns & student records. Used file handling for persistence & OOP concepts. Positive feedback for clean code structure.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRAINING & INTERNSHIP -->
-  <div class="card">
-    <div class="section-title"><i class="fas fa-briefcase"></i> Training & Internship</div>
-    <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
-      <div style="background: #eef3fc; border-radius: 1.5rem; padding: 1rem; flex: 2;">
-        <h3><i class="fas fa-railway" style="color: #FF6B4A;"></i> South Central Railways (Hyderabad) – Air Brake System & Testing</h3>
-        <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
-          <li>Understood layout, components (brake cylinder, distributor valve, auxiliary reservoir) and testing procedures.</li>
-          <li>Assisted in routine brake performance checks on passenger rake.</li>
+    <section>
+        <h2>EXPERIENCE</h2>
+        <ul>
+            <li><strong>Associate Process Analyst</strong> at Cambridge Technology for one year. Analyzed business processes, optimized workflows, and implemented automation solutions to enhance performance.</li>
+            <li><strong>TAG Specialist (H.R Team)</strong> at Kastech Software Solutions for 6 months. Assisted in talent acquisition, recruitment strategies, and employee engagement.</li>
         </ul>
-      </div>
-      <div style="background: linear-gradient(125deg, #d9e9fa, white); border-radius: 1.5rem; padding: 1rem; flex: 1; text-align: center;">
-        <i class="fas fa-chalkboard-user" style="font-size: 2rem; color:#1E3A5F;"></i>
-        <p><strong>Hands-on experience</strong><br>Railway brake diagnostics</p>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- CO-CURRICULAR + ACHIEVEMENTS -->
-  <div class="grid-2col">
-    <div class="card">
-      <div class="section-title"><i class="fas fa-trophy"></i> Co-curricular & Achievements</div>
-      <ul style="margin-left: 1.2rem;">
-        <li><i class="fas fa-globe" style="color:#48CFAD;"></i> Participated in <strong>International Youth Conclave</strong> – discussed global issues & leadership.</li>
-        <li><i class="fas fa-comments" style="color:#FF6B4A;"></i> Participated in <strong>Indo-Afghan Talk</strong> – cultural and academic exchange event.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="section-title"><i class="fas fa-language"></i> Languages Known</div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.8rem;">
-        <span class="skill-badge">Telugu (Native)</span>
-        <span class="skill-badge">English (Fluent)</span>
-        <span class="skill-badge">Hindi (Proficient)</span>
-      </div>
-    </div>
-  </div>
+    <section>
+        <h2>CO-CURRICULAR ACTIVITIES</h2>
+        <ul>
+            <li>Winner of the ‘Design Quotient’ organized by Mahindra & Mahindra.</li>
+            <li>Member of ‘SWAYAM – ED CELL’ (Educational Development Cell).</li>
+            <li>Member of ‘The Institution of Engineering’ (India).</li>
+        </ul>
+    </section>
 
-  <!-- PERSONAL DETAILS + DECLARATION in a modern block -->
-  <div class="grid-2col">
-    <div class="card">
-      <div class="section-title"><i class="fas fa-id-card"></i> Personal Details</div>
-      <div class="personal-detail-grid">
-        <div class="detail-item"><strong>Full Name</strong><br>K Rakesh</div>
-        <div class="detail-item"><strong>Father’s Name</strong><br>K. Narayana</div>
-        <div class="detail-item"><strong>Date of Birth</strong><br>09-05-1999</div>
-        <div class="detail-item"><strong>Gender</strong><br>Male</div>
-        <div class="detail-item"><strong>Nationality</strong><br>Indian</div>
-        <div class="detail-item"><strong>Marital Status</strong><br>Unmarried</div>
-        <div class="detail-item"><strong>Religion</strong><br>Hindu</div>
-        <div class="detail-item"><strong>Languages</strong><br>Telugu, English, Hindi</div>
-      </div>
-      <div class="detail-item" style="margin-top: 0.8rem;"><strong>Permanent Address</strong><br>3-5-2/12, Vijayapuri Colony, Uppal, Medchal Malkajgiri, Hyderabad – 500039</div>
-    </div>
+    <section>
+        <h2>INTERNSHIP</h2>
+        <p><strong>Project Work Training at Ordinance Factory:</strong> "Working of CNC Machines" - Gained hands-on experience in CNC machine operations, project planning, and mechanical manufacturing processes.</p>
+    </section>
 
-    <div class="card">
-      <div class="section-title"><i class="fas fa-file-signature"></i> Declaration</div>
-      <div class="declaration">
-        <p><i class="fas fa-quote-left" style="color: #FF6B4A;"></i> I hereby declare that all the information furnished above is true and correct to the best of my knowledge and belief.</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
-          <span><strong>Place:</strong> Hyderabad</span>
-          <span><strong>Date:</strong> <span id="currentDate"></span></span>
-        </div>
-        <div style="text-align: right; margin-top: 1rem;"><strong>(K Rakesh)</strong></div>
-      </div>
-    </div>
-  </div>
+    <section>
+        <h2>PROJECT WORK</h2>
+        <p><strong>Solar Operated Boom Sprayer:</strong> Developed a prototype for an eco-friendly, solar-powered agricultural sprayer, aimed at reducing energy costs and enhancing crop spraying efficiency.</p>
+    </section>
 
-  <!-- Call to action / downloadable resume simulation -->
-  <div style="display: flex; justify-content: center; margin: 1rem 0 1.5rem;">
-    <button class="btn-download" id="resumeDownloadBtn"><i class="fas fa-download"></i> Download Resume (PDF Version)</button>
-  </div>
+    <section>
+        <h2>SKILLS</h2>
+        <ul class="skills">
+            <li><strong>Technical Skills:</strong> CNC machining, Mechanical design, CAD software (SolidWorks, AutoCAD), 3D modeling, CFD simulations</li>
+            <li><strong>Programming Languages:</strong> Python, MATLAB, C++</li>
+            <li><strong>Tools & Technologies:</strong> MS Office Suite, MATLAB, CATIA, Autodesk Inventor, ANSYS</li>
+            <li><strong>Soft Skills:</strong> Communication, Teamwork, Time management, Problem-solving</li>
+        </ul>
+    </section>
 
-  <footer>
-    <p><i class="fas fa-map-pin"></i> Hyderabad, India | Open to opportunities in Mechanical Engineering & Software roles</p>
-    <p style="margin-top: 0.6rem; font-size: 0.8rem;">© 2025 K Rakesh — Built with fresh colors & innovation | Portfolio reflects real achievements</p>
-  </footer>
-</div>
+    <section>
+        <h2>CERTIFICATIONS</h2>
+        <ul>
+            <li>Certified in SolidWorks (2021)</li>
+            <li>Certified CNC Operator (2020)</li>
+        </ul>
+    </section>
 
-<script>
-  // set current date dynamically
-  const today = new Date();
-  const day = String(today.getDate()).padStart(2, '0');
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const year = today.getFullYear();
-  const formattedDate = `${day}-${month}-${year}`;
-  const dateSpan = document.getElementById('currentDate');
-  if (dateSpan) dateSpan.innerText = formattedDate;
+    <section>
+        <h2>LANGUAGES</h2>
+        <ul class="languages">
+            <li>English (Fluent)</li>
+            <li>Hindi (Native)</li>
+            <li>Telugu (Fluent)</li>
+        </ul>
+    </section>
 
-  // download simulation button
-  const downloadBtn = document.getElementById('resumeDownloadBtn');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', () => {
-      alert("📄 K_Rakesh_Resume.pdf — A detailed portfolio version is ready. You can contact me directly for the official PDF.");
-    });
-  }
-</script>
+    <footer>
+        <p>&copy; 2026 K Sai Kiran Reddy | Portfolio Website</p>
+    </footer>
 </body>
 </html>
