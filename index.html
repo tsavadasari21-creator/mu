@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Mohith Mallavarapu | Mechanical Engineering Portfolio</title>
-  <!-- Google Fonts + Font Awesome 6 (Free CDN) -->
+  <title>K Rakesh | Mechanical Engineer & Developer Portfolio</title>
+  <!-- Google Fonts + Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -16,243 +16,236 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #fef9f0 0%, #f4f7fe 100%);
+      background: #edf2f9;
       color: #1a2c3e;
       line-height: 1.5;
       padding: 2rem 1.5rem;
     }
 
-    /* smooth container */
-    .portfolio {
+    .portfolio-container {
       max-width: 1300px;
       margin: 0 auto;
     }
 
-    /* colourful block style : every card has distinct border/shadow personality */
+    /* fresh unique color palette: deep navy, coral, mint, soft lavender */
+    :root {
+      --primary-deep: #1E3A5F;
+      --coral-bright: #FF6B4A;
+      --mint-accent: #48CFAD;
+      --lavender-soft: #D6E0F0;
+      --bg-light: #F4F8FE;
+      --card-white: #ffffff;
+      --shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.01);
+    }
+
+    /* block-style cards with unique borders and hover */
     .card {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(0px);
+      background: var(--card-white);
       border-radius: 2rem;
       padding: 1.8rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.01);
-      transition: transform 0.2s ease, box-shadow 0.2s;
-      height: 100%;
+      margin-bottom: 2rem;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow);
+      border: 1px solid #eef2fa;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 30px 40px -15px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 28px 36px -16px rgba(0, 0, 0, 0.12);
+      border-color: var(--coral-bright);
     }
 
-    /* rainbow accent borders / header styles */
     .section-title {
       font-size: 1.9rem;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 1.5rem;
-      display: inline-block;
-      background: linear-gradient(125deg, #1e2f5e, #3b4e8c);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: -0.01em;
-      border-left: 6px solid #f4a261;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border-left: 6px solid var(--coral-bright);
       padding-left: 1rem;
+      color: var(--primary-deep);
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2.5rem;
+    .section-title i {
+      color: var(--coral-bright);
+      font-size: 1.7rem;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 2rem;
-    }
-
-    /* Hero */
+    /* hero area */
     .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #fef7e0 100%);
-      border-radius: 2.5rem;
-      padding: 2.5rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 215, 150, 0.5);
+      background: linear-gradient(135deg, #1E3A5F 0%, #2C5A7A 100%);
+      border-radius: 2rem;
+      padding: 2.2rem 2rem;
+      margin-bottom: 2rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow);
     }
 
-    .hero-name {
-      font-size: 3rem;
+    .hero h1 {
+      font-size: 2.8rem;
       font-weight: 800;
-      background: linear-gradient(145deg, #0b2b40, #2c5282);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
       letter-spacing: -0.02em;
     }
 
     .hero-tag {
-      background: #ffe6c7;
-      display: inline-block;
-      padding: 0.3rem 1rem;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1.2rem;
       border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #b45f2b;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 0.7rem;
     }
 
-    .contact-row {
+    .contact-info {
+      background: rgba(255,255,255,0.12);
+      border-radius: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
       gap: 1.2rem;
-      margin: 1.2rem 0 0.5rem;
     }
 
-    .contact-chip {
-      background: white;
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    .contact-info span {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: #2c3e50;
-      transition: all 0.2s;
-      border: 1px solid #ffe0b5;
+      font-size: 0.9rem;
     }
 
-    .contact-chip i {
-      color: #e67e22;
-      font-size: 1rem;
+    .contact-info i {
+      color: var(--mint-accent);
+      font-size: 1.1rem;
     }
 
-    /* objective card */
-    .objective-card {
-      background: linear-gradient(115deg, #eef2ff, #ffffff);
-      border-left: 12px solid #f39c12;
-      border-radius: 2rem;
+    /* grid utilities */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 1.8rem;
     }
 
-    /* education cards */
-    .edu-card {
-      background: white;
-      border-top: 8px solid #3b82f6;
-      border-radius: 1.8rem;
+    .grid-3col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      margin-bottom: 1.5rem;
     }
 
-    .edu-card:last-child {
-      border-top-color: #10b981;
+    /* education table style */
+    .edu-table {
+      width: 100%;
+      border-collapse: collapse;
     }
-
-    .badge-date {
-      background: #eef2ff;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
+    .edu-table th, .edu-table td {
+      padding: 12px 8px;
+      border-bottom: 1px solid #e2edf2;
+      text-align: left;
+    }
+    .edu-table th {
+      background: var(--lavender-soft);
       font-weight: 600;
+      color: var(--primary-deep);
+    }
+
+    .skill-badge {
       display: inline-block;
-      margin-bottom: 0.8rem;
-    }
-
-    /* project card */
-    .project-card {
-      background: linear-gradient(125deg, #fff6e8, #ffffff);
-      border: 1px solid #ffddb0;
-    }
-
-    .skill-group {
-      background: #fef7e0;
-      padding: 1rem 1.2rem;
-      border-radius: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .skill-tag {
-      display: inline-block;
-      background: white;
+      background: #eef2fc;
       padding: 0.4rem 1rem;
-      margin: 0.3rem 0.5rem 0.3rem 0;
       border-radius: 40px;
       font-size: 0.8rem;
       font-weight: 500;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: all 0.15s;
-      border: 1px solid #e2e8f0;
+      margin: 0.25rem 0.4rem 0.25rem 0;
+      border-left: 3px solid var(--coral-bright);
+      transition: all 0.1s;
     }
 
-    .skill-tag i {
-      margin-right: 6px;
-      color: #e67e22;
+    .project-card {
+      background: #ffffff;
+      border-top: 5px solid var(--mint-accent);
+      border-radius: 1.5rem;
     }
 
-    .skill-tag:hover {
-      transform: scale(1.02);
-      background: #f1f5f9;
-      border-color: #f39c12;
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+      margin-bottom: 0.75rem;
     }
 
-    .strength-icon {
-      background: #f1f5f9;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 1.2rem;
-      font-size: 1.5rem;
+    .train-badge {
+      background: var(--coral-bright);
+      color: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
       margin-bottom: 1rem;
-      color: #2c5282;
     }
 
-    .strength-item {
-      background: #ffffffdd;
+    .personal-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .detail-item {
+      background: #f9fbfe;
+      padding: 0.7rem 1rem;
+      border-radius: 1rem;
+      border-left: 4px solid var(--mint-accent);
+    }
+
+    .declaration {
+      background: #fef7e0;
       border-radius: 1.5rem;
       padding: 1.2rem;
-      text-align: center;
-      transition: 0.2s;
-      border: 1px solid #ffe0b0;
+      font-style: italic;
+      border: 1px solid #ffe0b5;
     }
 
     footer {
-      margin-top: 3rem;
       text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(255, 248, 235, 0.7);
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--primary-deep);
+      color: white;
       border-radius: 2rem;
-      color: #4a5568;
     }
 
-    .btn-resume {
-      background: #e67e22;
-      color: white;
+    .btn-download {
+      background: var(--coral-bright);
       border: none;
-      padding: 0.7rem 1.8rem;
-      border-radius: 40px;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
       font-weight: 600;
+      color: white;
       cursor: pointer;
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 1rem;
-      box-shadow: 0 4px 12px rgba(230,126,34,0.3);
+      font-size: 1rem;
     }
 
-    .btn-resume:hover {
-      background: #d35400;
-      transform: translateY(-2px);
+    .btn-download:hover {
+      background: #e55a3a;
+      transform: scale(1.02);
     }
 
-    /* responsive */
     @media (max-width: 700px) {
       body {
         padding: 1rem;
       }
-      .hero-name {
+      .hero h1 {
         font-size: 2rem;
       }
       .section-title {
@@ -262,139 +255,177 @@
   </style>
 </head>
 <body>
-<div class="portfolio">
-  <!-- HERO SECTION with colours & blocks -->
+<div class="portfolio-container">
+  <!-- Hero Section with unique colors -->
   <div class="hero">
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;">
+    <div>
+      <h1>K RAKESH</h1>
+      <div class="hero-tag"><i class="fas fa-cogs"></i> Mechanical Engineer | Java & C++ Developer | Railway Systems Enthusiast</div>
+      <div class="contact-info">
+        <span><i class="fas fa-mobile-alt"></i> +91 9705805546</span>
+        <span><i class="fas fa-envelope"></i> charyrakesh052@gmail.com</span>
+        <span><i class="fas fa-map-marker-alt"></i> Vijayapuri Colony, Uppal, Hyderabad</span>
+      </div>
+    </div>
+    <div style="background: rgba(72, 205, 173, 0.2); border-radius: 2rem; padding: 1rem 1.5rem; text-align: center;">
+      <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: #48CFAD;"></i>
+      <p style="margin-top: 0.3rem;">Goal-oriented · Quick learner</p>
+    </div>
+  </div>
+
+  <!-- PROFILE SUMMARY (unique styling) -->
+  <div class="card">
+    <div class="section-title"><i class="fas fa-user-astronaut"></i> Profile Summary</div>
+    <p style="font-size: 1.05rem; font-weight: 500; color: #2c4b6e;">Goal-oriented mechanical engineer with strong interpersonal skills, eager to contribute to customer-focused organizations. Combines technical knowledge in mechanical systems with programming abilities in C, C++, and Java. Quick learner, dedicated, and adaptable to new challenges.</p>
+  </div>
+
+  <!-- EDUCATION + TECHNICAL SKILLS double column -->
+  <div class="grid-2col">
+    <!-- Education block -->
+    <div class="card">
+      <div class="section-title" style="border-left-color: #48CFAD;"><i class="fas fa-graduation-cap"></i> Education</div>
+      <table class="edu-table">
+        <thead><tr><th>Degree</th><th>Specialization</th><th>Board/University</th><th>Year</th><th>%</th></tr></thead>
+        <tbody>
+          <tr><td>BTech</td><td>Mechanical</td><td>JNTUH</td><td>2022</td><td>62</td></tr>
+          <tr><td>Intermediate</td><td>MPC</td><td>Board of Intermediate Education</td><td>2018</td><td>65.6</td></tr>
+          <tr><td>SSC</td><td>General</td><td>State Board of Secondary Education</td><td>2016</td><td>87</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Technical Skills block (colorful badges) -->
+    <div class="card">
+      <div class="section-title" style="border-left-color: #FF6B4A;"><i class="fas fa-code"></i> Technical Skills</div>
+      <div style="margin-bottom: 1rem;">
+        <h4 style="color: #1E3A5F;"><i class="fas fa-laptop-code"></i> Programming Languages</h4>
+        <div><span class="skill-badge">C</span><span class="skill-badge">C++</span><span class="skill-badge">Java</span><span class="skill-badge">HTML (Web Basics)</span></div>
+      </div>
       <div>
-        <span class="hero-tag"><i class="fas fa-cogs"></i> Mechanical Engineer | Renewable Energy</span>
-        <h1 class="hero-name">MOHITH MALLAVARAPU</h1>
-        <div class="contact-row">
-          <span class="contact-chip"><i class="fas fa-phone-alt"></i> +1 216-235-2145</span>
-          <span class="contact-chip"><i class="fas fa-envelope"></i> mohithmallavarapu70@gmail.com</span>
-          <span class="contact-chip"><i class="fas fa-map-marker-alt"></i> 1801 E 12th St, Apt-518, Cleveland, OH 44115</span>
-        </div>
-      </div>
-      <div style="background: #ffe2c1; border-radius: 3rem; padding: 0.8rem 1.5rem; margin-top: 0.5rem;">
-        <i class="fas fa-bolt" style="color:#e67e22;"></i> <strong>Open to work</strong> · Entry-Level Engineer
+        <h4 style="color: #1E3A5F;"><i class="fas fa-train"></i> Mechanical Systems</h4>
+        <div><span class="skill-badge">Air Brake System (Railways)</span><span class="skill-badge">Basic Testing & Diagnostics</span></div>
       </div>
     </div>
   </div>
 
-  <!-- OBJECTIVE (colourful block) -->
-  <div class="card objective-card" style="margin-bottom: 2rem;">
-    <h2 class="section-title" style="border-left-color: #f39c12;"><i class="fas fa-bullseye" style="margin-right: 10px;"></i> Objective</h2>
-    <p style="font-size: 1.05rem; font-weight: 500; color: #2c3e50;">Motivated Mechanical Engineering graduate with strong technical knowledge and hands-on project experience in renewable energy and design software. Seeking an entry-level engineering position to apply problem-solving, design, and analytical skills while contributing to organizational growth.</p>
+  <!-- PROJECTS section (3 cards with unique style) -->
+  <div class="card" style="background: #ffffff;">
+    <div class="section-title"><i class="fas fa-microchip"></i> Key Projects</div>
+    <div class="grid-3col">
+      <!-- Project 1 -->
+      <div class="project-card" style="padding: 1.2rem; background: #fefaf5;">
+        <span class="train-badge"><i class="fas fa-car-crash"></i> Collision Avoidance</span>
+        <div class="project-title">Automatic Pneumatic Bumper System</div>
+        <p>Designed collision avoidance using pneumatic cylinders & IR sensors. Reduced impact force in low-speed collisions. Fabricated prototype & tested response under load conditions.</p>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card" style="padding: 1.2rem; background: #f4fafd;">
+        <span class="train-badge" style="background: #48CFAD;"><i class="fas fa-train"></i> Railways</span>
+        <div class="project-title">Performance Analysis of Air Brake System (Indian Railways)</div>
+        <p>Studied twin-pipe air brake systems in passenger coaches. Analyzed brake cylinder pressure variations, leakage detection. Prepared technical report on maintenance & failure modes.</p>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-card" style="padding: 1.2rem; background: #fff4ef;">
+        <span class="train-badge" style="background: #FF6B4A;"><i class="fab fa-java"></i> Java Mini Project</span>
+        <div class="project-title">Library Management System using Java</div>
+        <p>Console-based app for book issuance, returns & student records. Used file handling for persistence & OOP concepts. Positive feedback for clean code structure.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- EDUCATION : 2 blocks with different colours -->
-  <div class="grid-2">
-    <div class="card edu-card">
-      <div class="badge-date"><i class="fas fa-graduation-cap"></i> Spring 2025 – Present</div>
-      <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem;">Cleveland State University</h3>
-      <p style="font-size: 1rem; font-weight: 600; color: #2c5282;">Master of Science in Mechanical Engineering</p>
-      <p style="margin-top: 0.8rem;"><i class="fas fa-book-open"></i> Coursework: Advanced Manufacturing, Design Optimization, Computational Methods.</p>
-      <p><i class="fas fa-map-marker-alt"></i> Cleveland, OH</p>
-    </div>
-    <div class="card edu-card" style="border-top-color: #10b981;">
-      <div class="badge-date" style="background: #e0f2e9;"><i class="fas fa-university"></i> 2019 – 2023</div>
-      <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem;">VNR Vignana Jyothi Institute of Engineering and Technology</h3>
-      <p style="font-size: 1rem; font-weight: 600; color: #2c5282;">Bachelor of Technology in Mechanical Engineering</p>
-      <p><strong>CGPA:</strong> 5.9/10 &nbsp; | &nbsp; Hyderabad, India</p>
-      <p><i class="fas fa-chalkboard-teacher"></i> Major projects & coursework in thermodynamics, design & manufacturing</p>
-    </div>
-  </div>
-
-  <!-- ACADEMIC PROJECT (highlight block) -->
-  <div class="card project-card" style="margin-bottom: 2rem;">
-    <h2 class="section-title" style="border-left-color: #e67e22;"><i class="fas fa-solar-panel"></i> Featured Project</h2>
+  <!-- TRAINING & INTERNSHIP -->
+  <div class="card">
+    <div class="section-title"><i class="fas fa-briefcase"></i> Training & Internship</div>
     <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
-      <div style="flex: 2;">
-        <h3 style="font-size: 1.8rem; font-weight: 800; color: #b85c00;">Charging Electric Vehicle Using Solar Panels</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.8rem 0 1rem 0;">
-          <span class="skill-tag" style="background:#fee2e2;"><i class="fab fa-autoprefixer"></i> AutoCAD</span>
-          <span class="skill-tag" style="background:#e0f2fe;"><i class="fas fa-cube"></i> Fusion 360</span>
-          <span class="skill-tag" style="background:#e6f7ec;"><i class="fas fa-battery-full"></i> BMS Integration</span>
-          <span class="skill-tag" style="background:#fff0db;"><i class="fas fa-chart-line"></i> Cost Analysis</span>
-        </div>
-        <ul style="margin-left: 1.2rem; color: #2c3e50; display: flex; flex-direction: column; gap: 0.5rem;">
-          <li><i class="fas fa-check-circle" style="color:#e67e22;"></i> Designed a sustainable solar-powered EV charging system, reducing grid dependency.</li>
-          <li><i class="fas fa-check-circle" style="color:#e67e22;"></i> Modeled panel placement & vehicle setup using AutoCAD and Fusion 360 for optimal efficiency.</li>
-          <li><i class="fas fa-check-circle" style="color:#e67e22;"></i> Integrated battery management system (BMS) concepts to enhance charging performance & safety.</li>
-          <li><i class="fas fa-check-circle" style="color:#e67e22;"></i> Conducted feasibility & cost analysis for small-scale deployment — projected 22% energy offset.</li>
-          <li><i class="fas fa-check-circle" style="color:#e67e22;"></i> Collaborated with a team of 4, dividing design, research, and testing responsibilities.</li>
-          <li><i class="fas fa-check-circle" style="color:#e67e22;"></i> Presented findings at a technical seminar, highlighting renewable energy applications in modern transportation.</li>
+      <div style="background: #eef3fc; border-radius: 1.5rem; padding: 1rem; flex: 2;">
+        <h3><i class="fas fa-railway" style="color: #FF6B4A;"></i> South Central Railways (Hyderabad) – Air Brake System & Testing</h3>
+        <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+          <li>Understood layout, components (brake cylinder, distributor valve, auxiliary reservoir) and testing procedures.</li>
+          <li>Assisted in routine brake performance checks on passenger rake.</li>
         </ul>
       </div>
-      <div style="flex: 1; background: linear-gradient(125deg,#fdebd0, #fff3e6); border-radius: 1.5rem; padding: 1rem; text-align: center;">
-        <i class="fas fa-sun" style="font-size: 3rem; color:#f39c12;"></i>
-        <p style="margin-top: 0.5rem; font-weight: 600;">Solar-to-EV prototype<br> <span style="font-size: 0.8rem;">clean energy innovation</span></p>
+      <div style="background: linear-gradient(125deg, #d9e9fa, white); border-radius: 1.5rem; padding: 1rem; flex: 1; text-align: center;">
+        <i class="fas fa-chalkboard-user" style="font-size: 2rem; color:#1E3A5F;"></i>
+        <p><strong>Hands-on experience</strong><br>Railway brake diagnostics</p>
       </div>
     </div>
   </div>
 
-  <!-- TECHNICAL SKILLS (Colourful blocks / categories) -->
-  <div class="card" style="margin-bottom: 2rem; background: #fffffffa;">
-    <h2 class="section-title"><i class="fas fa-microchip"></i> Technical Skills & Tools</h2>
-    <div class="grid-3" style="gap: 1.2rem;">
-      <div class="skill-group" style="background: #ffe8df;">
-        <h4><i class="fas fa-drafting-compass"></i> Design & CAD Tools</h4>
-        <div><span class="skill-tag">AutoCAD</span><span class="skill-tag">SolidWorks</span><span class="skill-tag">Fusion 360</span></div>
-      </div>
-      <div class="skill-group" style="background: #e1f5fe;">
-        <h4><i class="fas fa-code"></i> Programming & Analysis</h4>
-        <div><span class="skill-tag">MATLAB</span><span class="skill-tag">Python (basic)</span><span class="skill-tag">ANSYS (beginner)</span></div>
-      </div>
-      <div class="skill-group" style="background: #e8f5e9;">
-        <h4><i class="fas fa-cogs"></i> Engineering Skills</h4>
-        <div><span class="skill-tag">Product Design</span><span class="skill-tag">Manufacturing Processes</span><span class="skill-tag">Mechanical Systems Analysis</span></div>
-      </div>
-      <div class="skill-group" style="background: #fef2e0;">
-        <h4><i class="fas fa-table"></i> Other Tools</h4>
-        <div><span class="skill-tag">MS Excel</span><span class="skill-tag">MS Word</span><span class="skill-tag">PowerPoint</span><span class="skill-tag">Google Workspace</span></div>
+  <!-- CO-CURRICULAR + ACHIEVEMENTS -->
+  <div class="grid-2col">
+    <div class="card">
+      <div class="section-title"><i class="fas fa-trophy"></i> Co-curricular & Achievements</div>
+      <ul style="margin-left: 1.2rem;">
+        <li><i class="fas fa-globe" style="color:#48CFAD;"></i> Participated in <strong>International Youth Conclave</strong> – discussed global issues & leadership.</li>
+        <li><i class="fas fa-comments" style="color:#FF6B4A;"></i> Participated in <strong>Indo-Afghan Talk</strong> – cultural and academic exchange event.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="section-title"><i class="fas fa-language"></i> Languages Known</div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.8rem;">
+        <span class="skill-badge">Telugu (Native)</span>
+        <span class="skill-badge">English (Fluent)</span>
+        <span class="skill-badge">Hindi (Proficient)</span>
       </div>
     </div>
   </div>
 
-  <!-- STRENGTHS Grid (all colours block) -->
-  <div class="card" style="background: #fefaf5; margin-bottom: 2rem;">
-    <h2 class="section-title"><i class="fas fa-star-of-life"></i> Core Strengths</h2>
-    <div class="grid-3" style="margin-top: 0.5rem;">
-      <div class="strength-item"><div class="strength-icon"><i class="fas fa-rocket"></i></div><h3>Quick Learner</h3><p>Adaptable & fast upskilling</p></div>
-      <div class="strength-item"><div class="strength-icon"><i class="fas fa-comments"></i></div><h3>Communication</h3><p>Strong written & verbal</p></div>
-      <div class="strength-item"><div class="strength-icon"><i class="fas fa-hourglass-half"></i></div><h3>Time Management</h3><p>Efficient task prioritization</p></div>
-      <div class="strength-item"><div class="strength-icon"><i class="fas fa-users"></i></div><h3>Team Collaboration</h3><p>Cross-functional teamwork</p></div>
-      <div class="strength-item"><div class="strength-icon"><i class="fas fa-tasks"></i></div><h3>Project Management</h3><p>Lead initiatives to success</p></div>
-      <div class="strength-item"><div class="strength-icon"><i class="fas fa-brain"></i></div><h3>Analytical Thinking</h3><p>Data-driven problem solving</p></div>
+  <!-- PERSONAL DETAILS + DECLARATION in a modern block -->
+  <div class="grid-2col">
+    <div class="card">
+      <div class="section-title"><i class="fas fa-id-card"></i> Personal Details</div>
+      <div class="personal-detail-grid">
+        <div class="detail-item"><strong>Full Name</strong><br>K Rakesh</div>
+        <div class="detail-item"><strong>Father’s Name</strong><br>K. Narayana</div>
+        <div class="detail-item"><strong>Date of Birth</strong><br>09-05-1999</div>
+        <div class="detail-item"><strong>Gender</strong><br>Male</div>
+        <div class="detail-item"><strong>Nationality</strong><br>Indian</div>
+        <div class="detail-item"><strong>Marital Status</strong><br>Unmarried</div>
+        <div class="detail-item"><strong>Religion</strong><br>Hindu</div>
+        <div class="detail-item"><strong>Languages</strong><br>Telugu, English, Hindi</div>
+      </div>
+      <div class="detail-item" style="margin-top: 0.8rem;"><strong>Permanent Address</strong><br>3-5-2/12, Vijayapuri Colony, Uppal, Medchal Malkajgiri, Hyderabad – 500039</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><i class="fas fa-file-signature"></i> Declaration</div>
+      <div class="declaration">
+        <p><i class="fas fa-quote-left" style="color: #FF6B4A;"></i> I hereby declare that all the information furnished above is true and correct to the best of my knowledge and belief.</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+          <span><strong>Place:</strong> Hyderabad</span>
+          <span><strong>Date:</strong> <span id="currentDate"></span></span>
+        </div>
+        <div style="text-align: right; margin-top: 1rem;"><strong>(K Rakesh)</strong></div>
+      </div>
     </div>
   </div>
 
-  <!-- Additional block: contact / downloadable vibe -->
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; background: #2c3e50; border-radius: 2rem; padding: 1.5rem 2rem; color: white; margin: 1rem 0;">
-    <div>
-      <i class="fas fa-file-alt" style="font-size: 2rem; margin-right: 1rem;"></i>
-      <span style="font-weight: 600;">Looking for entry-level mechanical / renewable energy roles.</span>
-    </div>
-    <button class="btn-resume" id="resumeBtn"><i class="fas fa-download"></i> Download resume (PDF)</button>
+  <!-- Call to action / downloadable resume simulation -->
+  <div style="display: flex; justify-content: center; margin: 1rem 0 1.5rem;">
+    <button class="btn-download" id="resumeDownloadBtn"><i class="fas fa-download"></i> Download Resume (PDF Version)</button>
   </div>
 
   <footer>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 1rem;">
-      <a href="#" style="color:#e67e22; text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="#" style="color:#e67e22; text-decoration: none;"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#" style="color:#e67e22; text-decoration: none;"><i class="fas fa-envelope"></i> mohithmallavarapu70@gmail.com</a>
-    </div>
-    <p><i class="fas fa-map-pin"></i> Cleveland, OH · Open to relocation · Available for interviews</p>
-    <p style="margin-top: 1rem; font-size: 0.8rem;">© 2025 Mohith Mallavarapu — Mechanical Engineering Portfolio. Built with colourful blocks & innovation.</p>
+    <p><i class="fas fa-map-pin"></i> Hyderabad, India | Open to opportunities in Mechanical Engineering & Software roles</p>
+    <p style="margin-top: 0.6rem; font-size: 0.8rem;">© 2025 K Rakesh — Built with fresh colors & innovation | Portfolio reflects real achievements</p>
   </footer>
 </div>
 
 <script>
-  // Simple interactive button for resume simulation
-  const resumeBtn = document.getElementById('resumeBtn');
-  if (resumeBtn) {
-    resumeBtn.addEventListener('click', () => {
-      alert("📄 Mohith_Mallavarapu_Resume.pdf — you can download the full version. (Demo: portfolio built from resume content)");
+  // set current date dynamically
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, '0');
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const year = today.getFullYear();
+  const formattedDate = `${day}-${month}-${year}`;
+  const dateSpan = document.getElementById('currentDate');
+  if (dateSpan) dateSpan.innerText = formattedDate;
+
+  // download simulation button
+  const downloadBtn = document.getElementById('resumeDownloadBtn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      alert("📄 K_Rakesh_Resume.pdf — A detailed portfolio version is ready. You can contact me directly for the official PDF.");
     });
   }
 </script>
