@@ -2,179 +2,428 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Portfolio of K Sai Kiran Reddy">
-    <title>Portfolio - K Sai Kiran Reddy</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Professional Portfolio of K Sai Kiran Reddy - Mechanical Engineer, Associate Process Analyst, and Design Enthusiast">
+    <title>K Sai Kiran Reddy | Portfolio</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            background-color: #333;
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f4fa;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* modern card style */
+        .card {
+            background: #ffffff;
+            border-radius: 1.75rem;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 40px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(70, 130, 200, 0.1);
+        }
+
+        /* section header with icon */
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 5px solid #2c7da0;
+            padding-left: 1rem;
+            color: #0b3b4f;
+        }
+
+        .section-title i {
+            color: #2c7da0;
+            font-size: 1.6rem;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1b4f6e 100%);
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
             color: white;
-            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .contact-info-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info-hero span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info-hero i {
+            color: #61dafb;
+        }
+
+        .hero-avatar {
+            background: #2c7da0;
+            border-radius: 2rem;
+            padding: 0.8rem 1.5rem;
             text-align: center;
+            font-weight: 600;
+            background: rgba(255,255,240,0.12);
+            backdrop-filter: blur(4px);
         }
-        section {
-            padding: 20px;
-            margin: 20px;
+
+        /* two column grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 1.8rem;
         }
-        h2 {
-            color: #333;
+
+        /* skills & tag styling */
+        .skill-tag {
+            display: inline-block;
+            background: #eef3fc;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0.25rem 0.4rem 0.25rem 0;
+            transition: all 0.2s;
+            border-left: 3px solid #2c7da0;
         }
-        table {
+
+        .skill-tag i {
+            margin-right: 6px;
+            color: #2c7da0;
+        }
+
+        .lang-badge {
+            background: #e9ecef;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-right: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* table styling (academic) */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .edu-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 0.9rem;
         }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
+
+        .edu-table th, .edu-table td {
+            padding: 12px 12px;
             text-align: left;
+            border-bottom: 1px solid #e2edf2;
         }
-        th {
-            background-color: #333;
-            color: white;
+
+        .edu-table th {
+            background: #eef2f9;
+            font-weight: 700;
+            color: #1a4b6e;
         }
-        .contact-info {
-            font-size: 1.1em;
+
+        .edu-table tr:hover {
+            background: #f8fafd;
         }
-        .skills, .languages, .certifications {
-            list-style-type: none;
+
+        /* list style */
+        .custom-list {
+            list-style: none;
             padding-left: 0;
         }
+        .custom-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .custom-list li i {
+            color: #2c7da0;
+            width: 1.4rem;
+            margin-top: 0.2rem;
+        }
+
+        /* project / internship box */
+        .highlight-box {
+            background: #f9fbfe;
+            border-radius: 1.2rem;
+            padding: 1rem 1.2rem;
+            border-left: 4px solid #2c7da0;
+        }
+
+        .cert-badge {
+            background: #e6f7f0;
+            color: #1e6f5c;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.3rem 0.5rem 0.3rem 0;
+        }
+
         footer {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #0f2b3d;
+            color: white;
+            border-radius: 2rem;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: #0f2b3d;
+        }
+
+        @media (max-width: 750px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>K Sai Kiran Reddy</h1>
-        <p class="contact-info">
-            Address: United Kingdom, London | Ph.no: 9840364956 | Email: <a href="mailto:Saikiran031997@outlook.com" style="color: white;">Saikiran031997@outlook.com</a>
-        </p>
-    </header>
+<div class="container">
+    <!-- Hero section with visuals -->
+    <div class="hero">
+        <div>
+            <h1>K Sai Kiran Reddy</h1>
+            <div class="hero-tag"><i class="fas fa-cogs"></i> Mechanical Engineer | Process Analyst | Design Enthusiast</div>
+            <div class="contact-info-hero">
+                <span><i class="fas fa-map-marker-alt"></i> London, United Kingdom</span>
+                <span><i class="fas fa-phone-alt"></i> +91 9840364956</span>
+                <span><i class="fas fa-envelope"></i> Saikiran031997@outlook.com</span>
+            </div>
+        </div>
+        <div class="hero-avatar">
+            <i class="fas fa-user-astronaut" style="font-size: 2.2rem;"></i>
+            <p style="margin-top: 6px;">MSc Mechanical Eng.</p>
+        </div>
+    </div>
 
-    <section>
-        <h2>CAREER OBJECTIVE</h2>
-        <p>To be part of a challenging and competitive environment where I could demonstrate my technical and non-technical abilities and skills, improve my knowledge, capabilities, and put them to use for the development of the organization.</p>
-    </section>
+    <!-- Career Objective Card -->
+    <div class="card">
+        <div class="section-title"><i class="fas fa-bullseye"></i> Career Objective</div>
+        <p style="font-size: 1rem; color: #2c4b6e;">To be part of a challenging and competitive environment where I could demonstrate my technical and non-technical abilities and skills, improve my knowledge, capabilities, and put them to use for the development of the organization.</p>
+    </div>
 
-    <section>
-        <h2>ACADEMIC BACKGROUND</h2>
-        <table>
-            <tr>
-                <th>S.No</th>
-                <th>Course</th>
-                <th>University/Board</th>
-                <th>Name of Institution</th>
-                <th>Year of Passing</th>
-                <th>Aggregate (%)</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>MSC in Mechanical Engineering</td>
-                <td>Kingston University</td>
-                <td>Kingston University</td>
-                <td>2021</td>
-                <td>70</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Bachelor of Engineering (Mechanical)</td>
-                <td>SRM University</td>
-                <td>SRM Institute of Technology</td>
-                <td>2019</td>
-                <td>76</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Intermediate</td>
-                <td>Board of Intermediate Education</td>
-                <td>Narayana Junior College, Kphb</td>
-                <td>2015</td>
-                <td>68.4</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>SSC</td>
-                <td>CBSE</td>
-                <td>DAV Public School</td>
-                <td>2013</td>
-                <td>6.8</td>
-            </tr>
-        </table>
-    </section>
+    <!-- Academic Background (modern table) -->
+    <div class="card">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Academic Background</div>
+        <div class="table-wrapper">
+            <table class="edu-table">
+                <thead>
+                    <tr><th>S.No</th><th>Course</th><th>University/Board</th><th>Institution</th><th>Year</th><th>Aggregate (%)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>MSc in Mechanical Engineering</td><td>Kingston University</td><td>Kingston University</td><td>2021</td><td>70</td></tr>
+                    <tr><td>2</td><td>Bachelor of Engineering (Mechanical)</td><td>SRM University</td><td>SRM Institute of Technology</td><td>2019</td><td>76</td></tr>
+                    <tr><td>3</td><td>Intermediate</td><td>Board of Intermediate Education</td><td>Narayana Junior College, Kphb</td><td>2015</td><td>68.4</td></tr>
+                    <tr><td>4</td><td>SSC</td><td>CBSE</td><td>DAV Public School</td><td>2013</td><td>6.8</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
-    <section>
-        <h2>EXPERIENCE</h2>
-        <ul>
-            <li><strong>Associate Process Analyst</strong> at Cambridge Technology for one year. Analyzed business processes, optimized workflows, and implemented automation solutions to enhance performance.</li>
-            <li><strong>TAG Specialist (H.R Team)</strong> at Kastech Software Solutions for 6 months. Assisted in talent acquisition, recruitment strategies, and employee engagement.</li>
-        </ul>
-    </section>
+    <!-- Experience + Co-curricular in two columns -->
+    <div class="grid-2">
+        <div class="card">
+            <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
+            <ul class="custom-list">
+                <li><i class="fas fa-chart-line"></i> <strong>Associate Process Analyst</strong> @ Cambridge Technology (1 year)<br>Analyzed business processes, optimized workflows, implemented automation solutions to enhance performance.</li>
+                <li><i class="fas fa-users"></i> <strong>TAG Specialist (H.R Team)</strong> @ Kastech Software Solutions (6 months)<br>Assisted in talent acquisition, recruitment strategies, and employee engagement.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="section-title"><i class="fas fa-trophy"></i> Co-curricular Activities</div>
+            <ul class="custom-list">
+                <li><i class="fas fa-medal"></i> Winner of the <strong>‘Design Quotient’</strong> organized by Mahindra & Mahindra.</li>
+                <li><i class="fas fa-chalkboard-user"></i> Member of <strong>‘SWAYAM – ED CELL’</strong> (Educational Development Cell).</li>
+                <li><i class="fas fa-microchip"></i> Member of <strong>‘The Institution of Engineering’</strong> (India).</li>
+            </ul>
+        </div>
+    </div>
 
-    <section>
-        <h2>CO-CURRICULAR ACTIVITIES</h2>
-        <ul>
-            <li>Winner of the ‘Design Quotient’ organized by Mahindra & Mahindra.</li>
-            <li>Member of ‘SWAYAM – ED CELL’ (Educational Development Cell).</li>
-            <li>Member of ‘The Institution of Engineering’ (India).</li>
-        </ul>
-    </section>
+    <!-- Internship + Project Work side by side -->
+    <div class="grid-2">
+        <div class="card">
+            <div class="section-title"><i class="fas fa-hard-hat"></i> Internship</div>
+            <div class="highlight-box">
+                <i class="fas fa-cogs" style="color: #2c7da0;"></i> <strong>Project Work Training at Ordinance Factory</strong><br>
+                "Working of CNC Machines" – Gained hands-on experience in CNC machine operations, project planning, and mechanical manufacturing processes.
+            </div>
+        </div>
+        <div class="card">
+            <div class="section-title"><i class="fas fa-solar-panel"></i> Project Work</div>
+            <div class="highlight-box">
+                <i class="fas fa-tractor" style="color: #2c7da0;"></i> <strong>Solar Operated Boom Sprayer</strong><br>
+                Developed a prototype for an eco-friendly, solar-powered agricultural sprayer, aimed at reducing energy costs and enhancing crop spraying efficiency.
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <h2>INTERNSHIP</h2>
-        <p><strong>Project Work Training at Ordinance Factory:</strong> "Working of CNC Machines" - Gained hands-on experience in CNC machine operations, project planning, and mechanical manufacturing processes.</p>
-    </section>
+    <!-- Skills + Certifications + Languages (visual tags) -->
+    <div class="grid-2">
+        <div class="card">
+            <div class="section-title"><i class="fas fa-code"></i> Technical & Soft Skills</div>
+            <div style="margin-bottom: 1rem;">
+                <h4 style="margin: 0.6rem 0 0.3rem;"><i class="fas fa-microchip"></i> Technical Skills</h4>
+                <div>
+                    <span class="skill-tag"><i class="fas fa-drafting-compass"></i> CNC machining</span>
+                    <span class="skill-tag"><i class="fas fa-cube"></i> Mechanical design</span>
+                    <span class="skill-tag"><i class="fas fa-laptop"></i> CAD (SolidWorks, AutoCAD)</span>
+                    <span class="skill-tag"><i class="fas fa-chart-line"></i> 3D modeling, CFD</span>
+                    <span class="skill-tag"><i class="fab fa-python"></i> Python, MATLAB, C++</span>
+                    <span class="skill-tag"><i class="fas fa-tools"></i> CATIA, ANSYS, Inventor</span>
+                </div>
+            </div>
+            <div>
+                <h4 style="margin: 0.6rem 0 0.3rem;"><i class="fas fa-comments"></i> Soft Skills</h4>
+                <div>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Time Management</span>
+                    <span class="skill-tag">Problem-solving</span>
+                </div>
+            </div>
+        </div>
 
-    <section>
-        <h2>PROJECT WORK</h2>
-        <p><strong>Solar Operated Boom Sprayer:</strong> Developed a prototype for an eco-friendly, solar-powered agricultural sprayer, aimed at reducing energy costs and enhancing crop spraying efficiency.</p>
-    </section>
+        <div class="card">
+            <div class="section-title"><i class="fas fa-certificate"></i> Certifications & Languages</div>
+            <div style="margin-bottom: 1.2rem;">
+                <h4><i class="fas fa-award"></i> Certifications</h4>
+                <div><span class="cert-badge"><i class="fas fa-check-circle"></i> SolidWorks Certified (2021)</span>
+                <span class="cert-badge"><i class="fas fa-check-circle"></i> Certified CNC Operator (2020)</span></div>
+            </div>
+            <div>
+                <h4><i class="fas fa-language"></i> Languages</h4>
+                <div>
+                    <span class="lang-badge">English (Fluent)</span>
+                    <span class="lang-badge">Hindi (Native)</span>
+                    <span class="lang-badge">Telugu (Fluent)</span>
+                </div>
+            </div>
+            <hr style="margin: 1.2rem 0; border-color: #e2edf2;">
+            <div>
+                <i class="fas fa-tools"></i> <strong>Tools & Technologies:</strong> MS Office Suite, MATLAB, CATIA, Autodesk Inventor, ANSYS
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <h2>SKILLS</h2>
-        <ul class="skills">
-            <li><strong>Technical Skills:</strong> CNC machining, Mechanical design, CAD software (SolidWorks, AutoCAD), 3D modeling, CFD simulations</li>
-            <li><strong>Programming Languages:</strong> Python, MATLAB, C++</li>
-            <li><strong>Tools & Technologies:</strong> MS Office Suite, MATLAB, CATIA, Autodesk Inventor, ANSYS</li>
-            <li><strong>Soft Skills:</strong> Communication, Teamwork, Time management, Problem-solving</li>
-        </ul>
-    </section>
+    <!-- extra visual: design achievement callout -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem;">
+        <div style="background: linear-gradient(115deg, #e3f0fc, white); border-radius: 1.5rem; padding: 1rem 1.5rem; flex: 1; border: 1px solid #cfe3ff;">
+            <i class="fas fa-medal" style="font-size: 1.8rem; color: #f4a261;"></i>
+            <p style="font-weight: 700; margin-top: 6px;">🏆 Design Quotient Winner <br> <span style="font-weight: normal;">Mahindra & Mahindra</span></p>
+        </div>
+        <div style="background: linear-gradient(115deg, #eaf7f0, white); border-radius: 1.5rem; padding: 1rem 1.5rem; flex: 1; border: 1px solid #c0e3d9;">
+            <i class="fas fa-solar-panel" style="font-size: 1.8rem; color: #2c7da0;"></i>
+            <p style="font-weight: 700; margin-top: 6px;">Solar Operated Boom Sprayer <br> <span style="font-weight: normal;">Eco-friendly innovation</span></p>
+        </div>
+        <div style="background: linear-gradient(115deg, #fef3e8, white); border-radius: 1.5rem; padding: 1rem 1.5rem; flex: 1; border: 1px solid #ffe0b5;">
+            <i class="fas fa-chart-line" style="font-size: 1.8rem; color: #e67e22;"></i>
+            <p style="font-weight: 700; margin-top: 6px;">Process Automation <br> <span style="font-weight: normal;">Cambridge Technology</span></p>
+        </div>
+    </div>
 
-    <section>
-        <h2>CERTIFICATIONS</h2>
-        <ul>
-            <li>Certified in SolidWorks (2021)</li>
-            <li>Certified CNC Operator (2020)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>LANGUAGES</h2>
-        <ul class="languages">
-            <li>English (Fluent)</li>
-            <li>Hindi (Native)</li>
-            <li>Telugu (Fluent)</li>
-        </ul>
-    </section>
+    <!-- Download / contact callout -->
+    <div style="text-align: center; margin: 1rem 0 1rem;">
+        <button id="downloadResumeBtn" class="btn-outline-light" style="background: #1f5e7e; border: none; color: white; padding: 0.7rem 1.8rem; border-radius: 50px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><i class="fas fa-download"></i> Download Portfolio (PDF)</button>
+    </div>
 
     <footer>
-        <p>&copy; 2026 K Sai Kiran Reddy | Portfolio Website</p>
+        <p><i class="fas fa-envelope-open-text"></i> K Sai Kiran Reddy — MSc Mechanical Engineer | Based in London, UK</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">© 2026 | Portfolio built with modern design & professional insights</p>
     </footer>
+</div>
+
+<script>
+    // Interactive button simulation
+    const downloadBtn = document.getElementById('downloadResumeBtn');
+    if(downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            alert("📄 K_Sai_Kiran_Reddy_Portfolio.pdf — A detailed version is ready. Feel free to connect via email for the official copy.");
+        });
+    }
+</script>
 </body>
 </html>
